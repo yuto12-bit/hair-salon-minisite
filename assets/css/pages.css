@@ -1994,8 +1994,8 @@
 /* Hero: 全画面 */
 /* SP (default: 375px〜) ---------------------------------------- */
 .site--tsumugi .p-home-hero {
-  height: 80vh;
-  min-height: 500px;
+  height: 95vh;
+  min-height: 560px;
   align-items: stretch;
 }
 
@@ -2023,7 +2023,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   gap: var(--space-2);
-  padding-bottom: var(--space-7);
+  padding-bottom: 12vh;
   padding-right: 7rem;
   padding-left: var(--space-3);
 }
