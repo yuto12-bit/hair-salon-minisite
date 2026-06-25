@@ -835,58 +835,7 @@
    TSUMUGI: 視覚的質感向上（ビジュアルポリッシュ）
 ----------------------------------------------- */
 
-/* === Hero: 中央寄せ・大きく・サロンらしく === */
-.site--tsumugi .p-home-hero {
-  align-items: center;
-  min-height: 80vh;
-}
-
-.site--tsumugi .p-home-hero__content {
-  text-align: center;
-  padding-block: var(--space-10);
-}
-
-.site--tsumugi .p-home-hero__eyebrow {
-  letter-spacing: var(--letter-spacing-wider);
-  margin-bottom: var(--space-4);
-  font-size: calc(var(--font-size-xs) * 0.9);
-}
-
-.site--tsumugi .p-home-hero__title {
-  font-size: 2.125rem;
-  letter-spacing: 0.04em;
-  line-height: 1.65;
-  margin-bottom: var(--space-4);
-}
-
-.site--tsumugi .p-home-hero__sub {
-  letter-spacing: var(--letter-spacing-base);
-  line-height: 2;
-}
-
-.site--tsumugi .p-home-hero__cta {
-  margin-top: var(--space-8);
-}
-
-/* Hero overlay: センター配置に合わせて均一に */
-.site--tsumugi .p-home-hero__overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(47, 39, 34, 0.18) 0%,
-    rgba(47, 39, 34, 0.60) 50%,
-    rgba(47, 39, 34, 0.82) 100%
-  );
-}
-
-@media (min-width: 48rem) {
-  .site--tsumugi .p-home-hero__title {
-    font-size: 3.25rem;
-    line-height: 1.5;
-  }
-  .site--tsumugi .p-home-hero__sub {
-    font-size: var(--font-size-lg);
-  }
-}
+/* === Hero: 縦書きデザイン用定義は後方の authoritative ブロックにまとめ済み === */
 
 /* === セクションタイトル: 縦ラインの装飾を上に追加 === */
 .site--tsumugi .c-sec-title {
@@ -2042,30 +1991,29 @@
 ======================================== */
 
 /* Hero: 全画面 */
+/* SP (default: 375px〜) ---------------------------------------- */
 .site--tsumugi .p-home-hero {
   height: 80vh;
   min-height: 500px;
   align-items: stretch;
 }
 
-/* Overlay: 右と下を重点的に暗く */
 .site--tsumugi .p-home-hero__overlay {
   background:
-    linear-gradient(to left,  rgba(47, 39, 34, 0.44) 0%, transparent 55%),
-    linear-gradient(to top,   rgba(47, 39, 34, 0.80) 0%, rgba(47, 39, 34, 0.06) 65%);
+    linear-gradient(to left,  rgba(47, 39, 34, 0.50) 0%, transparent 60%),
+    linear-gradient(to top,   rgba(47, 39, 34, 0.82) 0%, rgba(47, 39, 34, 0.06) 60%);
 }
 
-/* Content: hero 全体を覆う絶対配置 */
 .site--tsumugi .p-home-hero__content {
   position: absolute;
   inset: 0;
   display: block;
   text-align: left;
-  padding: var(--space-6);
-  padding-top: calc(var(--header-height) + var(--space-4));
+  padding: var(--space-5);
+  padding-top: calc(var(--header-height) + var(--space-3));
 }
 
-/* Text wrap: 高さいっぱい、子要素を下揃え */
+/* フロー要素（sub・CTA）が縦書きタイトルに被らないよう右側を確保 */
 .site--tsumugi .p-home-hero__text-wrap {
   position: relative;
   height: 100%;
@@ -2074,23 +2022,10 @@
   justify-content: flex-end;
   align-items: flex-start;
   gap: var(--space-2);
-  padding-bottom: var(--space-4);
+  padding-bottom: var(--space-5);
+  padding-right: 7rem;
 }
 
-/* Eyebrow: 左上に固定 */
-.site--tsumugi .p-home-hero__eyebrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-bottom: 0;
-  font-size: 0.75rem;
-  letter-spacing: var(--letter-spacing-wider);
-  color: rgba(255, 255, 255, 0.58);
-  font-family: var(--font-serif);
-  line-height: var(--line-height-base);
-}
-
-/* Title: 右側に縦書き */
 .site--tsumugi .p-home-hero__title {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -2098,45 +2033,43 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.375rem;
-  line-height: 1.85;
-  letter-spacing: 0.12em;
-  max-height: 62vh;
+  /* 3列 × 列幅(font-size × line-height) ≈ 3 × 30px = 90px ≈ 5.6rem */
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: 0.1em;
+  max-height: 56vh;
   margin-bottom: 0;
   color: var(--color-white);
   font-family: var(--font-serif);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
 }
 
-/* Sub: 下部左側のフレックスアイテム */
 .site--tsumugi .p-home-hero__sub {
   position: static;
-  font-size: var(--font-size-xs);
+  font-size: 0.6875rem;
   letter-spacing: var(--letter-spacing-base);
-  color: rgba(255, 255, 255, 0.68);
-  line-height: var(--line-height-base);
+  color: rgba(255, 255, 255, 0.70);
+  line-height: 1.75;
   margin-bottom: 0;
 }
 
-/* CTA: sub の直下、左揃え縦並び */
 .site--tsumugi .p-home-hero__cta {
   position: static;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-2);
-  margin-top: var(--space-1);
+  margin-top: var(--space-2);
   width: auto;
 }
 
-/* テキストリンク型 CTA */
 .site--tsumugi .p-home-hero__link {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   color: rgba(255, 255, 255, 0.88);
   font-family: var(--font-serif);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
   border-bottom: 1px solid rgba(255, 255, 255, 0.36);
   padding-bottom: 0.2rem;
@@ -2155,19 +2088,27 @@
   opacity: 0.85;
 }
 
-/* Desktop */
+/* PC (min-width: 48rem / 768px〜) ------------------------------ */
 @media (min-width: 48rem) {
   .site--tsumugi .p-home-hero__content {
     padding: var(--space-8);
     padding-top: calc(var(--header-height) + var(--space-6));
   }
+  /* PC: タイトル3列 × 55px ≈ 165px + right余白 */
+  .site--tsumugi .p-home-hero__text-wrap {
+    padding-right: 12rem;
+    padding-bottom: var(--space-8);
+  }
   .site--tsumugi .p-home-hero__title {
-    right: var(--space-4);
+    right: var(--space-6);
     font-size: 1.875rem;
+    line-height: 1.85;
+    letter-spacing: 0.12em;
     max-height: 65vh;
   }
   .site--tsumugi .p-home-hero__sub {
     font-size: var(--font-size-sm);
+    line-height: var(--line-height-base);
   }
   .site--tsumugi .p-home-hero__link {
     font-size: var(--font-size-base);
