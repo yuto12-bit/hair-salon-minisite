@@ -2023,7 +2023,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   gap: var(--space-2);
-  padding-bottom: var(--space-12);
+  padding-bottom: var(--space-7);
   padding-right: 7rem;
   padding-left: var(--space-3);
 }
@@ -3472,19 +3472,65 @@
   }
 }
 
+/* ================================================================
+   LOADER: tsumugi ホーム専用デザイン
+   ・漢字「紬」ゴールドグロウ + 2重展開リング
+   ・service / contact は .c-loader 要素を HTML から削除済み
+================================================================ */
+
 /* ----------------------------------------------------------------
-   LOADER: 表示時間を延長
-   ・テキスト・ラインのアニメーションをゆっくりに
-   ・is-loaded 付与後も 1.2s 待ってから 1.5s かけてフェードアウト
+   LOADER: tsumugi — ライト背景・ラグジュアリー標準設計（home のみ）
+   調査ベース: 白/クリーム背景 + serif wordmark + 細い gold line
+   easing: cubic-bezier(0.16,1,0.3,1) = 素早く来てゆっくり止まる
 ---------------------------------------------------------------- */
-.site--tsumugi .c-loader__text {
-  animation-duration: 2s;
+.site--tsumugi .c-loader {
+  background: var(--color-bg);
 }
+.site--tsumugi .c-loader__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+/* 上部アクセントライン */
+.site--tsumugi .c-loader__accent {
+  width: 0;
+  height: 1px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  animation: loader-line-grow 0.9s cubic-bezier(0, 0, 0.2, 1) 0.1s forwards;
+}
+/* wordmark "tsumugi" */
+.site--tsumugi .c-loader__kanji {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 4vw, 1.875rem);
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.35em;
+  color: var(--color-text);
+  opacity: 0;
+  animation: loader-fade-in 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+/* 下部アクセントライン */
 .site--tsumugi .c-loader__line {
-  animation-duration: 2s;
-  animation-delay: 0.8s;
+  animation-duration: 0.9s;
+  animation-delay: 0.7s;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+/* descriptor text */
+.site--tsumugi .c-loader__text {
+  font-size: 0.625rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-sub);
+  animation-duration: 0.9s;
+  animation-delay: 1.0s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* フェードアウト: 全要素が揃って見えてから消える
+   window.load が早く発火しても transition-delay が保護する */
 .site--tsumugi .c-loader.is-loaded {
-  transition-delay: 1.2s;
-  transition-duration: 1.5s;
+  transition-delay: 1.8s;
+  transition-duration: 0.7s;
 }
