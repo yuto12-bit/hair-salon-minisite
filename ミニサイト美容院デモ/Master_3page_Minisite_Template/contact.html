@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TEMPLATE FIELD: page_title | TEMPLATE FIELD: business_name -->
+  <title>ご予約・お問い合わせ｜Hair Salon tsumugi</title>
+
+  <!-- TEMPLATE FIELD: meta_description -->
+  <meta name="description" content="Hair Salon tsumugiへのご予約・お問い合わせページです。外部予約ページ、LINE、電話、Instagramからご連絡いただけます。">
+
+  <!-- TEMPLATE FIELD: canonical_url -->
+  <link rel="canonical" href="https://tsumugi-demo.remedora.jp/contact.html">
+
+  <!-- TEMPLATE FIELD: og_title | TEMPLATE FIELD: og_description | TEMPLATE FIELD: og_url | TEMPLATE FIELD: og_image_url -->
+  <meta property="og:title"       content="ご予約・お問い合わせ｜Hair Salon tsumugi">
+  <meta property="og:description" content="Hair Salon tsumugiへのご予約・お問い合わせページです。外部予約ページ、LINE、電話、Instagramからご連絡いただけます。">
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://tsumugi-demo.remedora.jp/contact.html">
+  <meta property="og:image"       content="https://tsumugi-demo.remedora.jp/assets/images/ogp.jpg">
+
+  <!-- TEMPLATE FIELD: favicon_path -->
+  <link rel="icon"             href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- GA未設定のためスクリプトを削除 -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+</head>
+<!-- TEMPLATE FIELD: site_id -->
+<body class="site site--tsumugi page page--contact">
+
+  <!-- Loader -->
+  <div class="c-loader" aria-hidden="true">
+    <div class="c-loader__content">
+      <!-- TEMPLATE FIELD: business_name -->
+      <p class="c-loader__text">Hair Salon tsumugi</p>
+      <div class="c-loader__line"></div>
+    </div>
+  </div>
+
+  <!-- SECTION START: Header -->
+  <header class="l-header">
+    <div class="l-header-inner">
+      <!-- TEMPLATE FIELD: business_name -->
+      <a href="index.html" class="c-logo">Hair Salon tsumugi</a>
+
+      <nav class="l-nav-pc" aria-label="グローバルナビゲーション">
+        <ul class="l-nav-pc__list">
+          <li><a href="index.html"   class="l-nav-pc__link">ホーム</a></li>
+          <li><a href="service.html" class="l-nav-pc__link">サービス</a></li>
+          <li><a href="contact.html" class="l-nav-pc__link is-current">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <button class="c-menu-toggle"
+              data-js="menu-toggle"
+              aria-label="メニューを開く"
+              aria-expanded="false">
+        <span class="c-menu-toggle__bar"></span>
+        <span class="c-menu-toggle__bar"></span>
+        <span class="c-menu-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+  <!-- SECTION END: Header -->
+
+  <nav class="l-nav-sp" data-js="mobile-nav" aria-hidden="true" aria-label="モバイルナビゲーション">
+    <ul class="l-nav-sp__list">
+      <li><a href="index.html"   class="l-nav-sp__link">ホーム</a></li>
+      <li><a href="service.html" class="l-nav-sp__link">サービス</a></li>
+      <li><a href="contact.html" class="l-nav-sp__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- SECTION START: Contact Hero -->
+    <div class="c-page-hero p-contact-hero" data-section="contact-hero">
+      <div class="p-contact-hero__overlay" aria-hidden="true"></div>
+      <div class="c-page-hero__inner">
+        <!-- TEMPLATE FIELD: contact_hero_en -->
+        <p class="c-page-hero__en">CONTACT</p>
+      </div>
+    </div>
+    <!-- SECTION END: Contact Hero -->
+
+
+
+    <!-- SECTION START: Contact Methods -->
+    <section class="p-contact-methods" data-section="contact-methods">
+      <div class="p-contact-methods__inner u-reveal">
+        <!-- TEMPLATE FIELD: contact_methods_lead -->
+        <p class="p-contact-methods__lead" data-anim="fade-up">
+          ご希望の連絡方法からお問い合わせください。初めての方は、メニューや髪のお悩みもあわせてお送りいただくとスムーズです。
+        </p>
+
+        <div class="c-contact-methods-grid">
+
+          <!-- 外部予約ページ（最優先） -->
+          <div class="c-contact-card c-contact-card--primary" data-anim="fade-up" data-anim-delay="1">
+            <p class="c-contact-card__label">RESERVE</p>
+            <h2 class="c-contact-card__title">予約ページ</h2>
+            <!-- TEMPLATE FIELD: contact_reserve_text -->
+            <p class="c-contact-card__text">
+              空き状況を確認して予約したい方はこちらをご利用ください。
+            </p>
+            <!-- TEMPLATE FIELD: reserve_url -->
+            <a href="https://example.com/reserve" class="c-contact-card__btn" target="_blank" rel="noopener noreferrer">予約ページを見る</a>
+          </div>
+
+          <!-- LINE -->
+          <div class="c-contact-card" data-anim="fade-up" data-anim-delay="2">
+            <p class="c-contact-card__label">LINE</p>
+            <h2 class="c-contact-card__title">LINEでご相談</h2>
+            <!-- TEMPLATE FIELD: contact_line_text -->
+            <p class="c-contact-card__text">
+              日時やメニューを相談しながら予約したい方におすすめです。
+            </p>
+            <!-- TEMPLATE FIELD: line_url -->
+            <a href="https://lin.ee/xxxxxxxx" class="c-contact-card__btn" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+          </div>
+
+          <!-- TEL -->
+          <div class="c-contact-card" data-anim="fade-up" data-anim-delay="3">
+            <p class="c-contact-card__label">TEL</p>
+            <h2 class="c-contact-card__title">お電話でご予約</h2>
+            <!-- TEMPLATE FIELD: contact_tel_text -->
+            <p class="c-contact-card__text">
+              当日のご相談やお急ぎの方は、お電話でご連絡ください。
+            </p>
+            <!-- TEMPLATE FIELD: phone -->
+            <a href="tel:0780000000" class="c-contact-card__btn">078-000-0000</a>
+          </div>
+
+          <!-- Instagram -->
+          <div class="c-contact-card" data-anim="fade-up" data-anim-delay="4">
+            <p class="c-contact-card__label">Instagram</p>
+            <h2 class="c-contact-card__title">Instagramをチェック</h2>
+            <!-- TEMPLATE FIELD: contact_instagram_text -->
+            <p class="c-contact-card__text">
+              お店の雰囲気やスタイル写真を確認したい方はこちらをご覧ください。
+            </p>
+            <!-- TEMPLATE FIELD: instagram_url -->
+            <a href="https://www.instagram.com/tsumugi_hair_demo/" class="c-contact-card__btn" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SECTION END: Contact Methods -->
+
+    <!-- SECTION START: Before Contact -->
+    <section class="p-contact-before" data-section="before-contact">
+      <div class="p-contact-before__inner u-reveal">
+        <h2 class="p-contact-before__title" data-anim="fade-up">ご連絡前のご案内</h2>
+
+        <div class="c-before-list">
+
+          <div class="c-before-item" data-anim="fade-up" data-anim-delay="1">
+            <div class="c-before-item__num">1</div>
+            <!-- TEMPLATE FIELD: before_contact_01_text -->
+            <p class="c-before-item__text">
+              <strong>送っていただきたい内容：</strong>ご希望日時・メニュー・髪のお悩みをお送りください。
+            </p>
+          </div>
+
+          <div class="c-before-item" data-anim="fade-up" data-anim-delay="2">
+            <div class="c-before-item__num">2</div>
+            <!-- TEMPLATE FIELD: before_contact_02_text -->
+            <p class="c-before-item__text">
+              <strong>返信について：</strong>営業時間内に順次確認します。定休日や施術中は返信に時間がかかる場合があります。
+            </p>
+          </div>
+
+          <div class="c-before-item" data-anim="fade-up" data-anim-delay="3">
+            <div class="c-before-item__num">3</div>
+            <!-- TEMPLATE FIELD: before_contact_03_text -->
+            <p class="c-before-item__text">
+              <strong>予約について：</strong>予約優先制です。ご来店前のご連絡をおすすめします。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SECTION END: Before Contact -->
+
+
+  </main>
+
+  <!-- SECTION START: Footer -->
+  <footer class="l-footer" data-section="footer">
+    <div class="l-footer-inner">
+      <div class="l-footer-info">
+        <!-- TEMPLATE FIELD: business_name -->
+        <span class="l-footer__logo">Hair Salon tsumugi</span>
+        <p class="l-footer__address">
+          <!-- TEMPLATE FIELD: address_postal | TEMPLATE FIELD: address_full -->
+          〒674-0094<br>
+          兵庫県明石市二見町西二見1-2-3<br>
+          TEL: <a href="tel:0780000000" class="l-footer__tel">
+            <!-- TEMPLATE FIELD: phone -->
+            078-000-0000
+          </a>
+        </p>
+      </div>
+      <nav class="l-footer-links" aria-label="フッターナビゲーション">
+        <ul class="l-footer__nav">
+          <li><a href="index.html"   class="l-footer__nav-link">ホーム</a></li>
+          <li><a href="service.html" class="l-footer__nav-link">サービス</a></li>
+          <li><a href="contact.html" class="l-footer__nav-link">お問い合わせ</a></li>
+          <li><a href="privacy.html" class="l-footer__nav-link">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="l-footer-copy">
+      <!-- TEMPLATE FIELD: copyright_year | TEMPLATE FIELD: business_name -->
+      <small>&copy; 2026 Hair Salon tsumugi. All Rights Reserved.</small>
+      <p class="l-footer-demo-note">※このサイトはREMEDORAの制作デモです。掲載情報は架空です。</p>
+    </div>
+  </footer>
+  <!-- SECTION END: Footer -->
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
