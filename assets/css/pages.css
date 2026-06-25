@@ -1,0 +1,3546 @@
+@charset "UTF-8";
+
+/* ==============================================
+   pages.css — ページ固有のセクションスタイル
+   各セクションを独立したブロックとして設計
+============================================== */
+
+/* -----------------------------------------------
+   HOME: First View Hero
+----------------------------------------------- */
+.p-home-hero {
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  /* TEMPLATE FIELD: hero_image_url — background-image を案件の画像に差し替える */
+  background-image: url('../images/hero.jpg');
+  background-color: var(--color-bg-deep);
+}
+
+.p-home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 23, 20, 0.95) 0%,
+    rgba(26, 23, 20, 0.55) 45%,
+    rgba(26, 23, 20, 0.1) 100%
+  );
+}
+
+.p-home-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-3);
+  width: 100%;
+}
+
+.p-home-hero__text-wrap {
+  max-width: 95%;
+}
+
+.p-home-hero__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-white);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+  margin-bottom: var(--space-2);
+}
+
+.p-home-hero__sub {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: #eaeaea;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 48rem) {
+  .p-home-hero {
+    min-height: 80vh;
+  }
+
+  .p-home-hero__content {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .p-home-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .p-home-hero__sub {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Mini About
+----------------------------------------------- */
+.p-home-about {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-home-about__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-home-about__lead {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+  position: relative;
+  padding-top: var(--space-4);
+}
+
+.p-home-about__lead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 48rem) {
+  .p-home-about {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-about__lead {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Service Preview
+----------------------------------------------- */
+.p-home-service {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-12);
+  padding-inline: var(--space-2);
+}
+
+.p-home-service__inner {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.p-home-service__btn-wrap {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 48rem) {
+  .p-home-service {
+    padding-block: var(--space-16);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Reason Mini
+----------------------------------------------- */
+.p-home-reason {
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  color: var(--color-text);
+}
+
+.p-home-reason__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-reason__interior {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-top: var(--space-10);
+}
+
+.p-home-reason__interior-lead {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  line-height: 1.9;
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
+  font-family: var(--font-serif);
+}
+
+@media (min-width: 48rem) {
+  .p-home-reason {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Business Info
+----------------------------------------------- */
+.p-home-bizinfo {
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-bizinfo__inner {
+  max-width: 43.75rem;
+  margin-inline: auto;
+}
+
+.p-home-bizinfo__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.p-home-bizinfo__title::after {
+  content: "";
+  display: block;
+  width: 1.875rem;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin: var(--space-2) auto 0;
+}
+
+@media (min-width: 48rem) {
+  .p-home-bizinfo {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-bizinfo__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Access / Map
+----------------------------------------------- */
+.p-home-map {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-map__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-map__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.p-home-map__address {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-serif);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-base);
+}
+
+@media (min-width: 48rem) {
+  .p-home-map {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-map__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Page Links
+----------------------------------------------- */
+.p-home-pagelinks {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-pagelinks__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-pagelinks__eyebrow {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .p-home-pagelinks {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Contact Strip
+----------------------------------------------- */
+.p-home-connect {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
+  padding-block: var(--space-8) var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-connect__inner {
+  max-width: 62.5rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-home-connect {
+    padding-block: var(--space-10) var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Main Services section
+----------------------------------------------- */
+.p-service-main {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-service-main__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-main {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Price Guide
+----------------------------------------------- */
+.p-service-price {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border-light);
+  padding-block: var(--space-8);
+  padding-inline: var(--space-2);
+}
+
+.p-service-price__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-price {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Simple Flow
+----------------------------------------------- */
+.p-service-flow {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-service-flow__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-flow {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Notes
+----------------------------------------------- */
+.p-service-notes {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-8) var(--space-4);
+  padding-inline: var(--space-2);
+}
+
+.p-service-notes__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-6);
+}
+
+.p-service-notes__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+@media (min-width: 48rem) {
+  .p-service-notes {
+    padding-block: var(--space-12) var(--space-6);
+    padding-inline: var(--space-4);
+  }
+
+  .p-service-notes__inner {
+    padding-top: var(--space-8);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: CTA
+----------------------------------------------- */
+.p-service-cta {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-12);
+  padding-inline: var(--space-2);
+}
+
+.p-service-cta__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-service-cta__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.p-service-cta__lead {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: var(--line-height-loose);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-service-cta__action {
+  margin-bottom: var(--space-3);
+}
+
+.p-service-cta__note {
+  font-size: var(--font-size-xs);
+  color: #888888;
+  margin: 0;
+}
+
+@media (min-width: 48rem) {
+  .p-service-cta {
+    padding-block: var(--space-16);
+    padding-inline: var(--space-4);
+  }
+
+  .p-service-cta__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .p-service-cta__lead {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-10);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Contact Methods section
+----------------------------------------------- */
+.p-contact-methods {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-contact-methods__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-contact-methods__lead {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  text-align: center;
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (min-width: 48rem) {
+  .p-contact-methods {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Before Contact
+----------------------------------------------- */
+.p-contact-before {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-8);
+  padding-inline: var(--space-2);
+}
+
+.p-contact-before__inner {
+  max-width: 43.75rem;
+  margin-inline: auto;
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-6);
+}
+
+.p-contact-before__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+@media (min-width: 48rem) {
+  .p-contact-before {
+    padding-block: var(--space-10);
+    padding-inline: var(--space-4);
+  }
+
+  .p-contact-before__inner {
+    padding-top: var(--space-8);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Final CTA
+----------------------------------------------- */
+.p-contact-final-cta {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-contact-final-cta__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-contact-final-cta__text {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  color: var(--color-text-sub);
+  line-height: var(--line-height-loose);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-contact-final-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+}
+
+.p-contact-final-cta__btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg-deep);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .p-contact-final-cta {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-contact-final-cta__text {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   PRIVACY: Policy Body
+----------------------------------------------- */
+.p-privacy-body {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-privacy-body__inner {
+  max-width: 47.5rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-privacy-body {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   PRIVACY: Contact for Policy
+----------------------------------------------- */
+.p-privacy-contact {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-8) var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-privacy-contact__inner {
+  max-width: 35rem;
+  margin-inline: auto;
+}
+
+.p-privacy-contact__text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-3);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-privacy-contact__info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-6);
+}
+
+.p-privacy-contact__info p {
+  margin: 0;
+}
+
+.p-privacy-contact__back-btn {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  border: 1px solid var(--color-border-light);
+  padding: 0.8rem var(--space-4);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.p-privacy-contact__back-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .p-privacy-contact {
+    padding-block: var(--space-10) var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* ===============================================
+   SITE: tsumugi — Natural Beige Salon
+   案件固有スタイル。 .site--tsumugi でスコープ。
+=============================================== */
+
+/* --- Header: ベージュ背景に合わせて明るく --- */
+.site--tsumugi .l-header {
+  background-color: rgba(251, 248, 243, 0.97);
+  border-bottom-color: var(--color-border-gold);
+}
+
+/* --- Hero overlay: 暖色ダーク系に --- */
+.site--tsumugi .p-home-hero__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(47, 39, 34, 0.90) 0%,
+    rgba(47, 39, 34, 0.45) 50%,
+    rgba(47, 39, 34, 0.05) 100%
+  );
+}
+
+/* --- Hero: サロン名・業種エリア表示 --- */
+.site--tsumugi .p-home-hero__eyebrow {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.80);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-3);
+  line-height: var(--line-height-base);
+}
+
+/* --- Hero: CTAボタン群（縦並び） --- */
+.site--tsumugi .p-home-hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.site--tsumugi .p-home-hero__cta .c-btn {
+  width: 14rem;
+  text-align: center;
+}
+
+/* Hero内のoutlineボタン: ダークオーバーレイ上で白く */
+.site--tsumugi .p-home-hero__cta .c-btn--outline {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* --- Primary button: ベージュ背景テーマでは白テキストが視認性高い --- */
+.site--tsumugi .c-btn--primary {
+  color: var(--color-white);
+}
+
+/* --- Outline button: 白背景上での枠線 --- */
+.site--tsumugi .c-btn--outline {
+  border-color: var(--color-border-gold);
+  color: var(--color-text);
+}
+
+/* --- Business Info: 補足テキスト --- */
+.site--tsumugi .p-home-bizinfo__note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  text-align: center;
+  margin-top: var(--space-4);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-base);
+}
+
+/* --- Page Hero title: ベージュ背景では白でなく暗色に --- */
+.site--tsumugi .c-page-hero__title {
+  color: var(--color-text);
+}
+
+/* --- Service CTA: タイトルをベージュ背景で視認できる色に --- */
+.site--tsumugi .p-service-cta__title {
+  color: var(--color-text);
+}
+
+
+/* --- Contact methods grid: 4カード対応 2×2 --- */
+@media (min-width: 48rem) {
+  .site--tsumugi .c-contact-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Contact card button: ベージュ背景上での枠線 */
+.site--tsumugi .c-contact-card__btn {
+  border-color: var(--color-border-gold);
+  color: var(--color-text);
+}
+
+/* --- Final CTA: 複数ボタン横並び --- */
+.site--tsumugi .p-contact-final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+/* --- Interior gallery caption: ベージュ系の可読色 --- */
+.site--tsumugi .c-interior-item__caption {
+  color: var(--color-text-sub);
+}
+
+/* --- Footer: 暗色テキストをベージュ背景に合わせる --- */
+.site--tsumugi .l-footer {
+  color: var(--color-text-sub);
+}
+
+.site--tsumugi .l-footer__tel {
+  color: var(--color-text-sub);
+}
+
+.site--tsumugi .l-footer__nav-link {
+  color: var(--color-text-sub);
+}
+
+.site--tsumugi .l-footer-copy small {
+  color: #a09080;
+}
+
+/* --- デモ注記 --- */
+.site--tsumugi .l-footer-demo-note {
+  font-size: var(--font-size-xs);
+  color: #b0a090;
+  text-align: center;
+  margin-top: var(--space-2);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* -----------------------------------------------
+   TSUMUGI: 視覚的質感向上（ビジュアルポリッシュ）
+----------------------------------------------- */
+
+/* === Hero: 中央寄せ・大きく・サロンらしく === */
+.site--tsumugi .p-home-hero {
+  align-items: center;
+  min-height: 80vh;
+}
+
+.site--tsumugi .p-home-hero__content {
+  text-align: center;
+  padding-block: var(--space-10);
+}
+
+.site--tsumugi .p-home-hero__eyebrow {
+  letter-spacing: var(--letter-spacing-wider);
+  margin-bottom: var(--space-4);
+  font-size: calc(var(--font-size-xs) * 0.9);
+}
+
+.site--tsumugi .p-home-hero__title {
+  font-size: 2.125rem;
+  letter-spacing: 0.04em;
+  line-height: 1.65;
+  margin-bottom: var(--space-4);
+}
+
+.site--tsumugi .p-home-hero__sub {
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 2;
+}
+
+.site--tsumugi .p-home-hero__cta {
+  margin-top: var(--space-8);
+}
+
+/* Hero overlay: センター配置に合わせて均一に */
+.site--tsumugi .p-home-hero__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(47, 39, 34, 0.18) 0%,
+    rgba(47, 39, 34, 0.60) 50%,
+    rgba(47, 39, 34, 0.82) 100%
+  );
+}
+
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-hero__title {
+    font-size: 3.25rem;
+    line-height: 1.5;
+  }
+  .site--tsumugi .p-home-hero__sub {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* === セクションタイトル: 縦ラインの装飾を上に追加 === */
+.site--tsumugi .c-sec-title {
+  padding-top: var(--space-8);
+}
+
+.site--tsumugi .c-sec-title::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 2.75rem;
+  background-color: var(--color-primary);
+  margin: 0 auto var(--space-4);
+  opacity: 0.65;
+}
+
+/* === Service Preview: ゆとりある余白 === */
+.site--tsumugi .p-home-service {
+  padding-block: var(--space-16);
+}
+
+/* === Reason: セクション内余白を広げる === */
+.site--tsumugi .p-home-reason {
+  padding-block: var(--space-12) var(--space-16);
+}
+
+.site--tsumugi .p-home-reason__interior {
+  margin-top: var(--space-12);
+}
+
+.site--tsumugi .p-home-reason__interior-lead {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 2.2;
+}
+
+/* === Business Info: 上品なテーブルスタイル === */
+.site--tsumugi .p-home-bizinfo {
+  padding-block: var(--space-12);
+}
+
+.site--tsumugi .c-bizinfo-table th {
+  letter-spacing: var(--letter-spacing-wide);
+  padding-block: var(--space-3);
+}
+
+.site--tsumugi .c-bizinfo-table td {
+  padding-block: var(--space-3);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* ================================================================
+   HOME: Page Links — 行スタイル（ボックスなし）
+   SP: 縦積み行リンク / PC: 2カラム
+================================================================ */
+.site--tsumugi .p-home-pagelinks {
+  padding-block: 0;
+  background-color: var(--color-bg-deep);
+}
+.site--tsumugi .p-home-pagelinks__eyebrow { display: none; }
+.site--tsumugi .c-pagelinks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.site--tsumugi .c-pagelink-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-5);
+  min-height: 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+}
+.site--tsumugi .c-pagelink-item:last-child { border-bottom: none; }
+.site--tsumugi .c-pagelink-item:hover { background-color: rgba(169, 131, 90, 0.04); }
+.site--tsumugi .c-pagelink-item__en {
+  font-family: var(--font-serif);
+  font-size: 0.625rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  min-width: 4.5rem;
+}
+.site--tsumugi .c-pagelink-item__label {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  flex: 1;
+}
+.site--tsumugi .c-pagelink-item__arrow {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-primary);
+  border: none;
+  transform: none;
+  flex-shrink: 0;
+  transition: width var(--transition-base);
+}
+.site--tsumugi .c-pagelink-item__arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid var(--color-primary);
+  border-right: 1px solid var(--color-primary);
+  transform: rotate(45deg);
+}
+.site--tsumugi .c-pagelink-item:hover .c-pagelink-item__arrow { width: 3rem; }
+@media (min-width: 48rem) {
+  .site--tsumugi .c-pagelinks-grid { grid-template-columns: 1fr 1fr; }
+  .site--tsumugi .c-pagelink-item {
+    border-right: 1px solid var(--color-border-light);
+    border-bottom: none;
+    padding: var(--space-8) var(--space-8);
+  }
+  .site--tsumugi .c-pagelink-item:last-child { border-right: none; }
+  .site--tsumugi .c-pagelink-item__label { font-size: var(--font-size-base); }
+}
+
+/* ================================================================
+   HOME: Connect — 最終 CTA
+   SP: 全幅プライマリボタン + 3リンク横並び / PC: インラインボタン
+================================================================ */
+.site--tsumugi .p-home-connect {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-12) var(--space-16);
+  padding-inline: var(--space-4);
+  border-top: 1px solid var(--color-border-gold);
+  text-align: center;
+}
+.site--tsumugi .p-home-connect__inner {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+.site--tsumugi .p-home-connect__eyebrow {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.site--tsumugi .p-home-connect__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .p-home-connect__sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: var(--space-8);
+}
+.site--tsumugi .p-home-connect__primary {
+  margin-bottom: var(--space-8);
+}
+.site--tsumugi .p-home-connect__btn {
+  display: block;
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.25s ease;
+}
+.site--tsumugi .p-home-connect__btn:hover {
+  background-color: rgba(169, 131, 90, 0.1);
+}
+.site--tsumugi .p-home-connect__sub-links {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+.site--tsumugi .p-home-connect__sub-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-2);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.site--tsumugi .p-home-connect__sub-link:hover { opacity: 0.65; }
+.site--tsumugi .p-home-connect__sub-link-label {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+}
+.site--tsumugi .p-home-connect__sub-link-sub {
+  font-size: 0.625rem;
+  color: var(--color-text-sub);
+  letter-spacing: 0.03em;
+}
+.site--tsumugi .p-home-connect__sub-sep {
+  width: 1px;
+  background-color: var(--color-border-light);
+  margin-block: var(--space-2);
+  flex-shrink: 0;
+}
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-connect__inner { max-width: 44rem; }
+  .site--tsumugi .p-home-connect__title { font-size: var(--font-size-xl); }
+  .site--tsumugi .p-home-connect__btn {
+    display: inline-block;
+    width: auto;
+    padding: var(--space-4) var(--space-12);
+  }
+  .site--tsumugi .p-home-connect__sub-link-label { font-size: var(--font-size-sm); }
+  .site--tsumugi .p-home-connect__sub-link-sub { font-size: var(--font-size-xs); }
+}
+
+/* === サブページ Page Hero: よりサロンらしく === */
+.site--tsumugi .c-page-hero {
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-top: calc(var(--space-12) + var(--header-height));
+  padding-bottom: var(--space-10);
+}
+
+.site--tsumugi .c-page-hero__title {
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.site--tsumugi .c-page-hero__sub {
+  font-size: var(--font-size-sm);
+  max-width: 32rem;
+  text-align: center;
+  line-height: 1.9;
+  color: var(--color-text-sub);
+}
+
+/* === Service page: 余白を広げる === */
+.site--tsumugi .p-service-main {
+  padding-block: var(--space-12) var(--space-16);
+}
+
+.site--tsumugi .p-service-price {
+  padding-block: var(--space-12);
+}
+
+.site--tsumugi .p-service-flow {
+  padding-block: var(--space-12);
+}
+
+/* Service CTA: ボーダーアクセント */
+.site--tsumugi .p-service-cta {
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border-gold);
+  border-bottom: 1px solid var(--color-border-gold);
+}
+
+.site--tsumugi .p-service-cta__title {
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.7;
+}
+
+/* === Contact page: 余白 === */
+.site--tsumugi .p-contact-methods {
+  padding-block: var(--space-12) var(--space-16);
+}
+
+/* Final CTA: より落ち着いたトーン */
+.site--tsumugi .p-contact-final-cta {
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border-gold);
+}
+
+.site--tsumugi .p-contact-final-cta__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: 2;
+}
+
+/* === Footer: ボーダーを1pxに絞り上品に === */
+.site--tsumugi .l-footer {
+  border-top-width: 1px;
+}
+
+.site--tsumugi .l-footer__logo {
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+}
+
+/* ===============================================
+   SECTION REDESIGN — テンプレ脱却 Part 1/3
+   共通 + HOME前半
+=============================================== */
+
+/* 共通: セクションタイトル 左揃え+ボーダー下線 */
+.site--tsumugi .c-sec-title {
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  padding-top: 0;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border-gold);
+}
+.site--tsumugi .c-sec-title::before { display: none; }
+.site--tsumugi .c-sec-title::after  { display: none; }
+
+/* 共通: サブページヒーロー 左揃え */
+.site--tsumugi .c-page-hero {
+  padding-top: calc(var(--header-height) + var(--space-10));
+  padding-bottom: var(--space-10);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-gold);
+}
+.site--tsumugi .c-page-hero__inner { text-align: left; }
+.site--tsumugi .c-page-hero__en {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-page-hero__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+}
+.site--tsumugi .c-page-hero__sub {
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2;
+  max-width: 34rem;
+}
+
+/* HOME: Service Preview — 横長カード積み */
+.site--tsumugi .p-home-service {
+  padding-block: var(--space-12) var(--space-10);
+  background-color: var(--color-bg-dark);
+}
+.site--tsumugi .c-service-grid   { display: block; margin-bottom: var(--space-8); }
+.site--tsumugi .c-service-subgrid { display: block; }
+
+.site--tsumugi .c-service-card {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  grid-template-areas: "img body";
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-top: 1px solid var(--color-border-light);
+  overflow: hidden;
+  min-height: 280px;
+}
+.site--tsumugi .c-service-card--featured { border-top: none; }
+.site--tsumugi .c-service-card__img-wrap { grid-area: img; overflow: hidden; border-radius: 0; }
+.site--tsumugi .c-service-card__img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.9s ease;
+}
+.site--tsumugi .c-service-card:hover .c-service-card__img { transform: scale(1.04); }
+.site--tsumugi .c-service-card__body {
+  grid-area: body;
+  padding: var(--space-8) var(--space-6);
+  display: flex; flex-direction: column; justify-content: center;
+  background-color: var(--color-bg);
+}
+.site--tsumugi .c-service-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-service-card__subtitle {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-service-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2;
+}
+.site--tsumugi .p-home-service__btn-wrap .c-btn--outline {
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  border-radius: 0;
+  padding: 0 0 0.25rem;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  background: transparent;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "img" "body";
+    min-height: unset;
+  }
+  .site--tsumugi .c-service-card__img-wrap { aspect-ratio: 4/3; }
+  .site--tsumugi .c-service-card__body { padding: var(--space-4); }
+}
+
+/* SECTION REDESIGN Part 2/3 — HOME後半 + SERVICE + CONTACT + PRIVACY */
+
+/* HOME: Business Info — ミニマルテーブル */
+.site--tsumugi .p-home-bizinfo {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg-dark);
+}
+.site--tsumugi .p-home-bizinfo__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: left;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-gold);
+  margin-bottom: var(--space-6);
+  color: var(--color-text);
+}
+.site--tsumugi .c-bizinfo-table { width: 100%; border-collapse: collapse; }
+.site--tsumugi .c-bizinfo-table tr { border-bottom: 1px solid var(--color-border-light); }
+.site--tsumugi .c-bizinfo-table th {
+  width: 8rem;
+  padding-block: var(--space-3);
+  text-align: left;
+  font-weight: normal;
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  vertical-align: top;
+}
+.site--tsumugi .c-bizinfo-table td {
+  padding-block: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+
+/* SERVICE: Main Services — 横長メニューアイテム */
+.site--tsumugi .p-service-main {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-16);
+  padding-inline: 0;
+  background-color: var(--color-bg);
+}
+.site--tsumugi .p-service-main__inner { max-width: none; }
+.site--tsumugi .p-service-main__eyebrow {
+  text-align: center;
+  padding-inline: var(--space-4);
+  margin-bottom: var(--space-8);
+  display: block;
+}
+/* PC: 3カラム縦長ポートレートグリッド */
+.site--tsumugi .c-menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border-light);
+  border-left: 1px solid var(--color-border-light);
+}
+.site--tsumugi .c-menu-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  min-height: auto;
+}
+.site--tsumugi .c-menu-item--reverse { flex-direction: column; }
+.site--tsumugi .c-menu-item__img-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  width: 100%;
+  flex-shrink: 0;
+}
+.site--tsumugi .c-menu-item__img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.9s ease;
+}
+.site--tsumugi .c-menu-item:hover .c-menu-item__img { transform: scale(1.04); }
+.site--tsumugi .c-menu-item__content {
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+.site--tsumugi .c-menu-item__content::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  margin-inline: auto;
+  opacity: 0.6;
+}
+.site--tsumugi .c-menu-item__name {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-menu-item__price {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-menu-item__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+  flex: 1;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-menu-list {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .site--tsumugi .c-menu-item { border-right: none; }
+  .site--tsumugi .c-menu-item__img-wrap { aspect-ratio: 3 / 2; }
+  .site--tsumugi .c-menu-item__content { padding: var(--space-5) var(--space-4); }
+  .site--tsumugi .c-menu-item__content::before { margin-bottom: var(--space-3); }
+}
+
+/* SERVICE: Price Guide — ラインテーブル */
+.site--tsumugi .p-service-price {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg-dark);
+}
+.site--tsumugi .p-service-price .c-sec-eyebrow { text-align: center; }
+.site--tsumugi .p-service-price .c-sec-title { text-align: center; }
+.site--tsumugi .c-price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-6);
+}
+.site--tsumugi .c-price-item {
+  padding: var(--space-6) var(--space-4) var(--space-6) 0;
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: left;
+}
+.site--tsumugi .c-price-item:not(:first-child) { padding-left: var(--space-4); }
+.site--tsumugi .c-price-item:last-child { border-right: none; }
+.site--tsumugi .c-price-item__name {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-price-item__price {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: normal;
+  letter-spacing: 0;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-price-item__note {
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+}
+.site--tsumugi .c-price-note-bottom {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  text-align: center;
+  line-height: 2;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-price-grid { grid-template-columns: 1fr; }
+  .site--tsumugi .c-price-item {
+    padding: var(--space-4) 0;
+    border-right: none;
+  }
+  .site--tsumugi .c-price-item:not(:first-child) { padding-left: 0; }
+  .site--tsumugi .c-price-item:last-child { border-bottom: none; }
+}
+
+/* SERVICE: Flow */
+.site--tsumugi .p-service-flow {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg);
+}
+.site--tsumugi .p-service-flow .c-sec-eyebrow { text-align: center; }
+.site--tsumugi .c-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: var(--space-8);
+}
+.site--tsumugi .c-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-6);
+  position: relative;
+}
+.site--tsumugi .c-flow-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  transform: translateX(50%);
+  width: var(--space-6);
+  height: 1px;
+  background-color: var(--color-border-gold);
+}
+.site--tsumugi .c-flow-step__num {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-border-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  flex-shrink: 0;
+  background: none;
+}
+.site--tsumugi .c-flow-step__body { display: block; }
+.site--tsumugi .c-flow-step__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-flow-step__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-flow-steps {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-6);
+  }
+  .site--tsumugi .c-flow-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .site--tsumugi .c-flow-step:last-child { border-bottom: none; }
+  .site--tsumugi .c-flow-step::after { display: none; }
+  .site--tsumugi .c-flow-step__num { margin-bottom: 0; flex-shrink: 0; }
+  .site--tsumugi .c-flow-step__body { align-self: center; }
+  .site--tsumugi .c-flow-step:not(:first-child) { padding-left: 0; }
+}
+
+/* SERVICE: Notes */
+.site--tsumugi .p-service-notes {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg-dark);
+}
+.site--tsumugi .p-service-notes .c-sec-eyebrow { text-align: left; margin-bottom: var(--space-2); }
+.site--tsumugi .p-service-notes__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: left;
+  color: var(--color-text);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-gold);
+  margin-bottom: var(--space-6);
+}
+.site--tsumugi .c-notes-item {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.site--tsumugi .c-notes-item__heading {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-primary);
+  margin-bottom: 0;
+}
+.site--tsumugi .c-notes-item__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-notes-item { grid-template-columns: 1fr; gap: var(--space-1); }
+}
+
+/* CONTACT: Methods */
+.site--tsumugi .p-contact-methods {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg);
+}
+.site--tsumugi .p-contact-methods__lead {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  max-width: 34rem;
+  text-align: center;
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
+  line-height: 2;
+}
+@media (min-width: 48rem) {
+  .site--tsumugi .c-contact-methods-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+}
+.site--tsumugi .c-contact-card {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-top: 1px solid var(--color-border-light);
+  padding: var(--space-6) 0;
+  display: block;
+}
+@media (min-width: 48rem) {
+  .site--tsumugi .c-contact-card:nth-child(odd) {
+    padding-right: var(--space-6);
+    border-right: 1px solid var(--color-border-light);
+  }
+  .site--tsumugi .c-contact-card:nth-child(even) { padding-left: var(--space-6); }
+}
+.site--tsumugi .c-contact-card__label {
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-contact-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-contact-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: var(--space-4);
+}
+.site--tsumugi .c-contact-card__btn {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding: 0 0 0.2rem;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* CONTACT: Before */
+.site--tsumugi .p-contact-before {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg);
+}
+.site--tsumugi .p-contact-before__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: center;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-gold);
+  margin-bottom: var(--space-8);
+}
+.site--tsumugi .c-before-item {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: baseline;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.site--tsumugi .c-before-item__num {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  background: none;
+  border: none; border-radius: 0;
+  width: auto; height: auto;
+  display: block;
+  line-height: 2;
+}
+.site--tsumugi .c-before-item__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 2;
+}
+
+/* CONTACT: Final CTA */
+.site--tsumugi .p-contact-final-cta {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border-gold);
+  text-align: center;
+}
+.site--tsumugi .p-contact-final-cta__text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  line-height: 2;
+  margin-bottom: var(--space-6);
+}
+.site--tsumugi .p-contact-final-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding: 0 0 0.2rem;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* PRIVACY */
+.site--tsumugi .p-privacy-body {
+  background-color: var(--color-bg);
+  padding-block: var(--space-12);
+}
+.site--tsumugi .c-privacy-doc h3 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--space-2);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-privacy-doc p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2.2;
+}
+.site--tsumugi .p-privacy-contact {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-12);
+}
+.site--tsumugi .p-privacy-contact__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-6);
+  line-height: 2;
+}
+.site--tsumugi .p-privacy-contact__info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 2;
+  margin-bottom: var(--space-6);
+}
+.site--tsumugi .p-privacy-contact__back-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 0.2rem;
+  background: transparent;
+}
+
+/* Footer */
+.site--tsumugi .l-footer { background-color: var(--color-bg-deep); }
+.site--tsumugi .l-footer__address {
+  font-size: var(--font-size-xs);
+  line-height: 2;
+}
+.site--tsumugi .l-footer__nav-link {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+/* =====================================================
+   REVOLUTIONARY REDESIGN — 抜本的なリデザイン
+   「カード羅列」を廃止。空白・活字・写真で語るデザインへ。
+   このブロックは上記のすべてのセクションルールを上書きする。
+===================================================== */
+
+/* --- HOME: Service Featured — 全面画像 + 右下フロートテキスト --- */
+.site--tsumugi .p-home-service {
+  padding-block: var(--space-10);
+  background-color: var(--color-bg);
+}
+.site--tsumugi .c-service-card--featured {
+  position: relative;
+  height: 72vh;
+  min-height: 420px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "img";
+  border-top: none;
+  overflow: hidden;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__img-wrap {
+  grid-area: unset;
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__img {
+  height: 100%; width: 100%; object-fit: cover; transition: transform 1.2s ease;
+}
+.site--tsumugi .c-service-card--featured:hover .c-service-card__img { transform: scale(1.05); }
+.site--tsumugi .c-service-card--featured .c-service-card__body {
+  grid-area: unset;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 42%;
+  background: rgba(251, 248, 243, 0.94);
+  backdrop-filter: blur(6px);
+  padding: var(--space-8) var(--space-6);
+  border-top: 1px solid var(--color-border-gold);
+  border-left: 1px solid var(--color-border-gold);
+  justify-content: flex-start;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-card--featured { height: 50vh; min-height: 280px; }
+  .site--tsumugi .c-service-card--featured .c-service-card__body {
+    position: static;
+    width: 100%;
+    background: var(--color-bg);
+    border: none;
+    border-top: 1px solid var(--color-border-gold);
+    backdrop-filter: none;
+  }
+}
+
+/* --- SERVICE: Menu Items — 3カラムグリッド PC 調整 --- */
+.site--tsumugi .c-menu-item {
+  min-height: unset;
+}
+.site--tsumugi .c-menu-item__name {
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-menu-item__price {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-3);
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-menu-item { min-height: unset; }
+}
+
+/* --- SERVICE: Price — センタード3カラム、大きな金額 --- */
+.site--tsumugi .c-price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 52rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--color-border-light);
+}
+.site--tsumugi .c-price-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-10) var(--space-5);
+  border-right: 1px solid var(--color-border-light);
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: none;
+}
+.site--tsumugi .c-price-item:not(:first-child) { padding-left: var(--space-5); }
+.site--tsumugi .c-price-item:last-child { border-right: none; }
+.site--tsumugi .c-price-item__name {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-4);
+  order: 1;
+}
+.site--tsumugi .c-price-item__price {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: normal;
+  letter-spacing: 0;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+  text-align: center;
+  order: 0;
+}
+.site--tsumugi .c-price-item__note {
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  line-height: 1.8;
+  margin-top: 0;
+  order: 2;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-price-grid { grid-template-columns: 1fr; }
+  .site--tsumugi .c-price-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+    padding: var(--space-8) var(--space-4);
+  }
+  .site--tsumugi .c-price-item:last-child { border-bottom: none; }
+  .site--tsumugi .c-price-item:not(:first-child) { padding-left: var(--space-4); }
+}
+
+/* --- CONTACT: Methods — 全幅横一行リスト（カードグリッド廃止） --- */
+.site--tsumugi .p-contact-methods {
+  background-color: var(--color-bg);
+  padding-block: var(--space-12);
+}
+@media (min-width: 48rem) {
+  .site--tsumugi .c-contact-methods-grid { display: block; }
+}
+.site--tsumugi .c-contact-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.site--tsumugi .c-contact-card:nth-child(even) { border-right: none; }
+.site--tsumugi .c-contact-card:nth-child(3),
+.site--tsumugi .c-contact-card:nth-child(4) { border-bottom: none; }
+.site--tsumugi .c-contact-card__label {
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-contact-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+.site--tsumugi .c-contact-card__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  margin-bottom: 0;
+  flex: 1;
+}
+.site--tsumugi .c-contact-card__btn {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding: 0 0 0.25rem;
+  border-radius: 0;
+  background: transparent;
+  margin-top: var(--space-6);
+  align-self: center;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-contact-card {
+    padding: var(--space-6) var(--space-4);
+    border-right: none;
+  }
+  .site--tsumugi .c-contact-card:nth-child(3),
+  .site--tsumugi .c-contact-card:nth-child(4) { border-bottom: 1px solid var(--color-border-light); }
+  .site--tsumugi .c-contact-card:last-child { border-bottom: none; }
+  .site--tsumugi .c-contact-card__btn { margin-top: var(--space-4); }
+}
+
+/* ========================================
+   Hero: 縦書きレイアウト（全画面活用）
+   ← 上記のすべての hero ルールを上書き
+======================================== */
+
+/* Hero: 全画面 */
+.site--tsumugi .p-home-hero {
+  height: 80vh;
+  min-height: 500px;
+  align-items: stretch;
+}
+
+/* Overlay: 右と下を重点的に暗く */
+.site--tsumugi .p-home-hero__overlay {
+  background:
+    linear-gradient(to left,  rgba(47, 39, 34, 0.44) 0%, transparent 55%),
+    linear-gradient(to top,   rgba(47, 39, 34, 0.80) 0%, rgba(47, 39, 34, 0.06) 65%);
+}
+
+/* Content: hero 全体を覆う絶対配置 */
+.site--tsumugi .p-home-hero__content {
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-align: left;
+  padding: var(--space-6);
+  padding-top: calc(var(--header-height) + var(--space-4));
+}
+
+/* Text wrap: 高さいっぱい、子要素を下揃え */
+.site--tsumugi .p-home-hero__text-wrap {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-bottom: var(--space-4);
+}
+
+/* Eyebrow: 左上に固定 */
+.site--tsumugi .p-home-hero__eyebrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: rgba(255, 255, 255, 0.58);
+  font-family: var(--font-serif);
+  line-height: var(--line-height-base);
+}
+
+/* Title: 右側に縦書き */
+.site--tsumugi .p-home-hero__title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.375rem;
+  line-height: 1.85;
+  letter-spacing: 0.12em;
+  max-height: 62vh;
+  margin-bottom: 0;
+  color: var(--color-white);
+  font-family: var(--font-serif);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* Sub: 下部左側のフレックスアイテム */
+.site--tsumugi .p-home-hero__sub {
+  position: static;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-base);
+  color: rgba(255, 255, 255, 0.68);
+  line-height: var(--line-height-base);
+  margin-bottom: 0;
+}
+
+/* CTA: sub の直下、左揃え縦並び */
+.site--tsumugi .p-home-hero__cta {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  width: auto;
+}
+
+/* テキストリンク型 CTA */
+.site--tsumugi .p-home-hero__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.36);
+  padding-bottom: 0.2rem;
+  line-height: 1;
+  transition: border-color var(--transition-base), opacity var(--transition-base);
+}
+
+.site--tsumugi .p-home-hero__link::after {
+  content: "→";
+  font-size: 0.72em;
+  opacity: 0.52;
+}
+
+.site--tsumugi .p-home-hero__link:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.80);
+  opacity: 0.85;
+}
+
+/* Desktop */
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-hero__content {
+    padding: var(--space-8);
+    padding-top: calc(var(--header-height) + var(--space-6));
+  }
+  .site--tsumugi .p-home-hero__title {
+    right: var(--space-4);
+    font-size: 1.875rem;
+    max-height: 65vh;
+  }
+  .site--tsumugi .p-home-hero__sub {
+    font-size: var(--font-size-sm);
+  }
+  .site--tsumugi .p-home-hero__link {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* =================================================================
+   SP-FIRST FINAL OVERHAUL
+   ・SP（375px〜）表示を一番として全セクション再定義
+   ・全CTAをテキストリンク化（ボックスボタン完全廃止）
+   ・ボックスカード・グリッド羅列を排除
+   このブロックがすべての最終定義。上書き専用。
+================================================================= */
+
+/* ----------------------------------------------------------------
+   [1] サブページ Hero — 左揃え、SP で大きく
+---------------------------------------------------------------- */
+.site--tsumugi .c-page-hero {
+  padding-top: calc(var(--header-height) + var(--space-6));
+  padding-bottom: var(--space-6);
+  background-color: var(--color-bg-dark);
+  border-bottom: 1px solid var(--color-border-gold);
+  text-align: left;
+}
+.site--tsumugi .c-page-hero__inner { text-align: left; }
+.site--tsumugi .c-page-hero__en {
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-page-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.875rem, 7vw, 2.75rem);
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-page-hero__sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  max-width: 30rem;
+}
+
+/* ----------------------------------------------------------------
+   [2] セクションタイトル — SP で視覚的インパクトを強く
+---------------------------------------------------------------- */
+.site--tsumugi .c-sec-title {
+  font-size: clamp(1.5rem, 6.5vw, 1.875rem);
+  text-align: left;
+  letter-spacing: 0.07em;
+  margin-bottom: var(--space-6);
+}
+.site--tsumugi .c-sec-title::before { display: none; }
+
+/* ----------------------------------------------------------------
+   [4] HOME: Service subgrid cards — SP で背景なし・エディトリアル
+---------------------------------------------------------------- */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap {
+    aspect-ratio: 16 / 9;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__body {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: var(--space-3) 0 var(--space-4);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+}
+
+/* ----------------------------------------------------------------
+   [5] HOME: Connect Strip — SP: 縦リスト（2×2グリッド廃止）
+---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   SERVICE CTA — 中央揃え・ボーダーボタン
+---------------------------------------------------------------- */
+.site--tsumugi .p-service-cta {
+  padding-block: var(--space-12) var(--space-16);
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border-gold);
+  text-align: center;
+}
+.site--tsumugi .p-service-cta__inner { text-align: center; }
+.site--tsumugi .p-service-cta .c-sec-eyebrow { margin-bottom: var(--space-4); }
+.site--tsumugi .p-service-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 4vw, 1.375rem);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 2;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  max-width: 26rem;
+  margin-inline: auto;
+}
+.site--tsumugi .p-service-cta__lead {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: var(--space-8);
+}
+.site--tsumugi .p-service-cta__action { display: flex; justify-content: center; }
+.site--tsumugi .p-service-cta .c-btn {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 0;
+  padding: var(--space-4) var(--space-10);
+  width: auto;
+  min-width: 0;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  min-height: 0;
+  box-shadow: none;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+.site--tsumugi .p-service-cta .c-btn:hover { background-color: rgba(169, 131, 90, 0.1); }
+.site--tsumugi .p-service-cta .c-btn::after { display: none; }
+
+/* ----------------------------------------------------------------
+   [8] SERVICE: Menu Items — SP で画像大きく、ボックス感なし
+---------------------------------------------------------------- */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-menu-item__img-wrap { aspect-ratio: 4 / 3; }
+  .site--tsumugi .c-menu-item__content {
+    padding: var(--space-4) 0 var(--space-5);
+    background: transparent;
+    box-shadow: none;
+  }
+  .site--tsumugi .c-menu-item__name { font-size: var(--font-size-xl); }
+}
+
+/* ----------------------------------------------------------------
+   [9] CONTACT: Methods grid — 2×2カードグリッド
+---------------------------------------------------------------- */
+.site--tsumugi .c-contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--color-border-light);
+  border-left: 1px solid var(--color-border-light);
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-contact-methods-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+    border-top: none;
+  }
+}
+
+/* ----------------------------------------------------------------
+   [10] CONTACT: Before Items — 3カラム横並び、デコレーティブ数字
+---------------------------------------------------------------- */
+.site--tsumugi .c-before-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.site--tsumugi .c-before-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-gold);
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: none;
+}
+.site--tsumugi .c-before-item__num {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: rgba(169, 131, 90, 0.18);
+  font-weight: normal;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: var(--space-4);
+}
+.site--tsumugi .c-before-item__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+}
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-before-list { grid-template-columns: 1fr; gap: 0; }
+  .site--tsumugi .c-before-item {
+    border-top: none;
+    border-left: 1px solid var(--color-border-gold);
+    padding: var(--space-4) var(--space-4);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .site--tsumugi .c-before-item:last-child { border-bottom: none; }
+  .site--tsumugi .c-before-item__num { font-size: 2rem; margin-bottom: var(--space-2); }
+}
+
+/* ----------------------------------------------------------------
+   [11] CONTACT: Final CTA — センタード、ボーダーボタン
+---------------------------------------------------------------- */
+.site--tsumugi .p-contact-final-cta {
+  padding-block: var(--space-16);
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border-gold);
+  text-align: center;
+}
+.site--tsumugi .p-contact-final-cta__inner { text-align: center; }
+.site--tsumugi .p-contact-final-cta__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 4vw, 1.375rem);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 2;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+  max-width: 28rem;
+  margin-inline: auto;
+}
+.site--tsumugi .p-contact-final-cta__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  justify-content: center;
+}
+.site--tsumugi .p-contact-final-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 0;
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: background-color 0.25s ease;
+}
+.site--tsumugi .p-contact-final-cta__btn:hover { background-color: rgba(169, 131, 90, 0.1); }
+.site--tsumugi .p-contact-final-cta__btn::after { display: none; }
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .p-contact-final-cta__actions { flex-direction: column; align-items: center; }
+  .site--tsumugi .p-contact-final-cta__btn { width: 100%; justify-content: center; }
+}
+
+/* ----------------------------------------------------------------
+   [12] SERVICE: Notes — SP で単純リスト化
+---------------------------------------------------------------- */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-notes-list {
+    display: block;
+    border-top: 1px solid var(--color-border-light);
+  }
+  .site--tsumugi .c-notes-item {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border-light);
+    border-right: none;
+  }
+  .site--tsumugi .c-notes-item::before {
+    font-size: 3rem;
+    color: rgba(169, 131, 90, 0.1);
+    margin-bottom: var(--space-2);
+    display: block;
+  }
+}
+
+/* ----------------------------------------------------------------
+   [13] PRIVACY: Contact section — クリーン左揃え
+---------------------------------------------------------------- */
+.site--tsumugi .p-privacy-contact {
+  padding-block: var(--space-10);
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border-gold);
+  text-align: left;
+}
+.site--tsumugi .p-privacy-contact__inner { text-align: left; }
+.site--tsumugi .p-privacy-contact__text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: 1.85;
+}
+.site--tsumugi .p-privacy-contact__info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2.2;
+  margin-bottom: var(--space-6);
+  border-left: 1px solid var(--color-border-gold);
+  padding-left: var(--space-4);
+}
+.site--tsumugi .p-privacy-contact__back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding: 0 0 0.2rem;
+  background: transparent;
+  border-radius: 0;
+}
+.site--tsumugi .p-privacy-contact__back-btn::after { content: "→"; font-size: 0.72em; opacity: 0.45; }
+
+/* =================================================================
+   CINEMATIC FINAL — 写真の上にテキスト、白いパネルを全廃
+   間（Ma）の哲学：空白と活字と写真だけで語る
+   参考：高級日本ブランド・エディトリアル誌のレイアウト手法
+================================================================= */
+
+/* ----------------------------------------------------------------
+   [A] HOME: Service Cards — 全て写真オーバーレイ化
+       白いボディパネルを完全廃止。グラデーションで文字可読性を確保
+---------------------------------------------------------------- */
+
+/* Featured card */
+.site--tsumugi .c-service-card--featured {
+  position: relative;
+  height: 72vh;
+  min-height: 360px;
+  overflow: hidden;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__img-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+/* グラデーションオーバーレイ（::after で写真の上に重ねる） */
+.site--tsumugi .c-service-card--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30,22,18,0.82) 0%, rgba(30,22,18,0.1) 52%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* ボディ：白いパネルではなく写真の上に浮かせる */
+.site--tsumugi .c-service-card--featured .c-service-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  padding: var(--space-8) var(--space-4) var(--space-4);
+  z-index: 2;
+  justify-content: flex-start;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__title {
+  color: var(--color-white);
+  font-size: var(--font-size-2xl);
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  margin-bottom: var(--space-1);
+}
+.site--tsumugi .c-service-card--featured .c-service-card__subtitle {
+  color: rgba(255,255,255,0.72);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-service-card--featured .c-service-card__text {
+  color: rgba(255,255,255,0.62);
+  font-size: var(--font-size-xs);
+  line-height: 1.8;
+  margin-bottom: var(--space-3);
+}
+.site--tsumugi .c-service-card--featured .c-service-card__link {
+  color: rgba(255,255,255,0.82);
+  border-bottom-color: rgba(255,255,255,0.4);
+}
+
+/* SP: List cards も同様にシネマティック化 */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-subgrid { display: block; }
+  .site--tsumugi .c-service-card--list {
+    position: relative;
+    height: 52vw;
+    min-height: 200px;
+    overflow: hidden;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: unset;
+  }
+  .site--tsumugi .c-service-card--list::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,22,18,0.78) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+    border: none;
+    padding: var(--space-6) var(--space-3) var(--space-3);
+    z-index: 2;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    margin-bottom: var(--space-1);
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__subtitle {
+    color: rgba(255,255,255,0.68);
+    font-size: var(--font-size-xs);
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__text { display: none; }
+}
+
+/* PC: List cards は横2列で同様のオーバーレイ */
+@media (min-width: 48rem) {
+  .site--tsumugi .c-service-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .site--tsumugi .c-service-card--list {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: unset;
+  }
+  .site--tsumugi .c-service-card--list::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,22,18,0.75) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__body {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: none; border: none;
+    padding: var(--space-8) var(--space-4) var(--space-4);
+    z-index: 2;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    margin-bottom: var(--space-1);
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__subtitle { color: rgba(255,255,255,0.68); }
+  .site--tsumugi .c-service-card--list .c-service-card__text { display: none; }
+}
+
+/* ----------------------------------------------------------------
+   HOME: Reason — アイコン三角配置（1上全幅 / 2下横並び）
+   .p-home-reason スコープで特異度を上げ、上位ルールに勝つ
+---------------------------------------------------------------- */
+.site--tsumugi .p-home-reason .c-reason-timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  counter-reset: none;
+  border: none;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item::before {
+  content: none;
+  display: none;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item:first-child {
+  grid-column: 1 / -1;
+  padding: var(--space-8) var(--space-6);
+}
+
+.site--tsumugi .p-home-reason .c-reason-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-5) var(--space-3);
+  border: none;
+  overflow: visible;
+  position: static;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(169, 131, 90, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  background-color: var(--color-bg);
+}
+
+.site--tsumugi .p-home-reason .c-reason-item:nth-child(n+2) .c-reason-item__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.site--tsumugi .p-home-reason .c-reason-item__icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item:nth-child(n+2) .c-reason-item__icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item__heading {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  position: static;
+  z-index: unset;
+  align-self: auto;
+  grid-area: unset;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item:first-child .c-reason-item__heading {
+  font-size: var(--font-size-sm);
+}
+
+.site--tsumugi .p-home-reason .c-reason-item__text {
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  max-width: 100%;
+  position: static;
+  z-index: unset;
+  grid-area: unset;
+}
+
+.site--tsumugi .p-home-reason .c-reason-item:first-child .c-reason-item__text {
+  font-size: var(--font-size-xs);
+  max-width: 20rem;
+}
+
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-reason .c-reason-item:first-child { padding: var(--space-10) var(--space-8); }
+  .site--tsumugi .p-home-reason .c-reason-item:nth-child(n+2) { padding: var(--space-8) var(--space-6); }
+  .site--tsumugi .p-home-reason .c-reason-item__icon { width: 5.5rem; height: 5.5rem; }
+  .site--tsumugi .p-home-reason .c-reason-item:nth-child(n+2) .c-reason-item__icon { width: 5rem; height: 5rem; }
+  .site--tsumugi .p-home-reason .c-reason-item__icon svg { width: 1.75rem; height: 1.75rem; }
+  .site--tsumugi .p-home-reason .c-reason-item__heading { font-size: var(--font-size-sm); }
+  .site--tsumugi .p-home-reason .c-reason-item:first-child .c-reason-item__heading { font-size: var(--font-size-base); }
+  .site--tsumugi .p-home-reason .c-reason-item__text { font-size: var(--font-size-xs); }
+  .site--tsumugi .p-home-reason .c-reason-item:first-child .c-reason-item__text { font-size: var(--font-size-sm); }
+}
+
+
+/* ----------------------------------------------------------------
+   SERVICE: Menu Items — SP クリーンカード（flex確定 / 画像上 / テキスト下）
+---------------------------------------------------------------- */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-menu-item,
+  .site--tsumugi .c-menu-item--reverse {
+    display: flex;
+    flex-direction: column;
+    min-height: unset;
+    overflow: hidden;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .site--tsumugi .c-menu-item__img-wrap {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .site--tsumugi .c-menu-item__img-wrap img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .site--tsumugi .c-menu-item__content {
+    background: var(--color-bg);
+    padding: var(--space-5) var(--space-4);
+    flex: 1;
+    text-align: center;
+  }
+  .site--tsumugi .c-menu-item__content::before { margin-bottom: var(--space-3); margin-inline: auto; }
+  .site--tsumugi .c-menu-item__name {
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-2);
+  }
+  .site--tsumugi .c-menu-item__price {
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-3);
+  }
+  .site--tsumugi .c-menu-item__desc {
+    font-size: var(--font-size-xs);
+    line-height: 2;
+  }
+}
+
+
+/* =================================================================
+   SERVICE CARD 円形テンプレートを全リセット
+   components.css の border-radius:50% / 固定サイズを上書き
+   → 全画面シネマティック表示を正しく機能させる
+================================================================= */
+
+/* [RESET] img-wrap の円形・固定サイズを解除 */
+.site--tsumugi .c-service-card__img-wrap {
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+  display: block;
+  flex-shrink: unset;
+}
+
+/* [RESET] img 本体の border-radius を解除 */
+.site--tsumugi .c-service-card__img {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* [RESET] desktop で増やされる固定サイズも上書き */
+@media (min-width: 48rem) {
+  .site--tsumugi .c-service-card__img-wrap { width: auto; height: auto; }
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap { width: auto; height: auto; }
+}
+
+/* --- Featured: block化・絶対配置でカード全面を覆う --- */
+.site--tsumugi .c-service-card--featured {
+  display: block;
+  position: relative;
+  height: 72vh;
+  min-height: 360px;
+  overflow: hidden;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__img-wrap {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* グラデーション（::after で写真の上に重ねる） */
+.site--tsumugi .c-service-card--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 22, 18, 0.84) 0%,
+    rgba(30, 22, 18, 0.12) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+/* ボディ: 写真の下部に浮かせる（白パネルなし） */
+.site--tsumugi .c-service-card--featured .c-service-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  padding: var(--space-10) var(--space-4) var(--space-4);
+  z-index: 2;
+  text-align: left;
+}
+.site--tsumugi .c-service-card--featured .c-service-card__title {
+  color: var(--color-white);
+  font-size: var(--font-size-2xl);
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  margin-bottom: var(--space-1);
+}
+.site--tsumugi .c-service-card--featured .c-service-card__subtitle {
+  color: rgba(255,255,255,0.70);
+  font-size: var(--font-size-sm);
+  text-align: left;
+  margin-bottom: var(--space-2);
+}
+.site--tsumugi .c-service-card--featured .c-service-card__text {
+  color: rgba(255,255,255,0.58);
+  font-size: var(--font-size-xs);
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+
+/* --- SP: List cards もシネマティック化 --- */
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-card--list {
+    display: block;
+    position: relative;
+    height: 52vw;
+    min-height: 200px;
+    overflow: hidden;
+    flex-direction: unset;
+    gap: 0;
+    align-items: unset;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .site--tsumugi .c-service-card--list::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,22,18,0.78) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+    border: none;
+    padding: var(--space-6) var(--space-3) var(--space-3);
+    z-index: 2;
+    width: 100%;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-align: left;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    margin-bottom: var(--space-1);
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__subtitle {
+    color: rgba(255,255,255,0.68);
+    font-size: var(--font-size-xs);
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__text { display: none; }
+}
+
+/* --- PC: List cards も同様 --- */
+@media (min-width: 48rem) {
+  .site--tsumugi .c-service-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .site--tsumugi .c-service-card--list {
+    display: block;
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    flex-direction: unset;
+    gap: 0;
+    align-items: unset;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img-wrap {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .site--tsumugi .c-service-card--list::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,22,18,0.75) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+    border: none;
+    padding: var(--space-8) var(--space-4) var(--space-4);
+    z-index: 2;
+    width: 100%;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-align: left;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    margin-bottom: var(--space-1);
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__subtitle {
+    color: rgba(255,255,255,0.68);
+    font-size: var(--font-size-xs);
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .site--tsumugi .c-service-card--list .c-service-card__text { display: none; }
+}
+
+/* =================================================================
+   FEATURED CARD DEFINITIVE FIX
+   両クラス連結で specificity 0,3,0 確保
+   → display:grid (line 1181 / 0,2,0) を確実に上書き
+================================================================= */
+
+.site--tsumugi .c-service-card.c-service-card--featured {
+  display: block;
+  position: relative;
+  height: 72vh;
+  min-height: 360px;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+}
+
+.site--tsumugi .c-service-card.c-service-card--featured .c-service-card__img-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site--tsumugi .c-service-card.c-service-card--featured .c-service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.site--tsumugi .c-service-card.c-service-card--featured .c-service-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  padding: var(--space-10) var(--space-4) var(--space-4);
+  z-index: 2;
+  display: block;
+}
+
+@media (max-width: 47.9375rem) {
+  .site--tsumugi .c-service-card.c-service-card--featured {
+    display: block;
+    position: relative;
+    height: 72vh;
+    min-height: 360px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .site--tsumugi .c-service-card.c-service-card--featured .c-service-card__img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+  }
+  .site--tsumugi .c-service-card.c-service-card--featured .c-service-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: none;
+    border: none;
+    z-index: 2;
+    padding: var(--space-10) var(--space-4) var(--space-4);
+  }
+}
+
+/* ================================================================
+   TSUMUGI v2 — 構造的リデザイン 2026-06-24
+   SP優先（モバイルファースト）。デフォルト = SP、min-width: 48rem でPC拡張。
+================================================================ */
+
+/* ----------------------------------------------------------------
+   HOME: Mini About — SP: 1カラム（写真上 / テキスト下）
+---------------------------------------------------------------- */
+.site--tsumugi .p-home-about {
+  padding-block: var(--space-10);
+  background-color: var(--color-bg-dark);
+}
+
+/* ================================================================
+   HOME: About — SP: 縦積み（見出し→画像→テキスト→タグ）
+                  PC: 写真左（縦長）/ 文章右
+================================================================ */
+.site--tsumugi .p-home-about {
+  padding-block: var(--space-12);
+  background-color: var(--color-bg-dark);
+}
+
+.site--tsumugi .p-home-about__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+}
+
+.site--tsumugi .c-sec-eyebrow {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.site--tsumugi .p-home-about__heading {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+  letter-spacing: 0.07em;
+  line-height: 1.9;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.site--tsumugi .p-home-about__photo-wrap {
+  overflow: hidden;
+  border-radius: 0.25rem;
+  margin-bottom: var(--space-6);
+}
+
+.site--tsumugi .p-home-about__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s ease;
+}
+
+.site--tsumugi .p-home-about__photo-wrap:hover .p-home-about__photo {
+  transform: scale(1.03);
+}
+
+.site--tsumugi .p-home-about__lead::before { display: none; }
+.site--tsumugi .p-home-about__lead {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2.3;
+  padding: 0;
+  border: none;
+  max-width: none;
+  margin: 0 0 var(--space-5);
+}
+
+.site--tsumugi .p-home-about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site--tsumugi .p-home-about__tag {
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-base);
+  border: 1px solid var(--color-border-gold);
+  padding: 0.25rem 0.75rem;
+}
+
+/* PC: 写真左（縦長スパン）・テキスト右 */
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-about {
+    padding-block: var(--space-16);
+  }
+  .site--tsumugi .p-home-about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: var(--space-12);
+    row-gap: 0;
+    align-items: start;
+  }
+  .site--tsumugi .p-home-about .c-sec-eyebrow {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: var(--space-3);
+  }
+  .site--tsumugi .p-home-about__heading {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: clamp(1.25rem, 2.2vw, 1.875rem);
+    margin-bottom: var(--space-8);
+  }
+  .site--tsumugi .p-home-about__photo-wrap {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    border-radius: 0.5rem;
+    margin-bottom: 0;
+  }
+  .site--tsumugi .p-home-about__photo {
+    aspect-ratio: 2 / 3;
+    border-radius: 0.5rem;
+    height: 100%;
+    object-fit: cover;
+  }
+  .site--tsumugi .p-home-about__lead {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-6);
+  }
+  .site--tsumugi .p-home-about__tags {
+    grid-column: 2;
+    grid-row: 4;
+    align-self: start;
+  }
+}
+
+/* ----------------------------------------------------------------
+   HOME: Business Info — SP: 1カラム（table廃止 / DLカード）
+---------------------------------------------------------------- */
+.site--tsumugi .p-home-bizinfo {
+  padding-block: var(--space-10);
+  background-color: var(--color-bg);
+}
+
+.site--tsumugi .p-home-bizinfo__inner {
+  max-width: var(--container-wide);
+}
+
+.site--tsumugi .p-home-bizinfo__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: normal;
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: left;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-gold);
+  margin-bottom: var(--space-5);
+  color: var(--color-text);
+}
+
+.site--tsumugi .p-home-bizinfo__title::after { display: none; }
+
+/* SP: 1カラム */
+.site--tsumugi .p-home-bizinfo__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.site--tsumugi .p-home-bizinfo__card {
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-4);
+}
+
+.site--tsumugi .p-home-bizinfo__card--note {
+  background-color: var(--color-bg-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.site--tsumugi .p-home-bizinfo__dl { margin: 0; }
+
+.site--tsumugi .p-home-bizinfo__row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 var(--space-3);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: baseline;
+}
+
+.site--tsumugi .p-home-bizinfo__row--last { border-bottom: none; }
+
+.site--tsumugi .p-home-bizinfo__dt {
+  font-family: var(--font-serif);
+  font-size: 0.625rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  font-weight: normal;
+  margin: 0;
+}
+
+.site--tsumugi .p-home-bizinfo__dd {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.site--tsumugi .p-home-bizinfo__tel {
+  color: var(--color-text);
+  transition: color var(--transition-base);
+}
+
+.site--tsumugi .p-home-bizinfo__tel:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.site--tsumugi .p-home-bizinfo__note-label {
+  font-family: var(--font-serif);
+  font-size: 0.625rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.site--tsumugi .p-home-bizinfo__note-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 2;
+  margin: 0;
+}
+
+.site--tsumugi .p-home-bizinfo__note-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-base);
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 0.2rem;
+  transition: opacity var(--transition-base);
+}
+
+.site--tsumugi .p-home-bizinfo__note-link::after {
+  content: "→";
+  font-size: 0.72em;
+  opacity: 0.45;
+}
+
+.site--tsumugi .p-home-bizinfo__note-link:hover { opacity: 0.72; }
+
+/* PC: 2カラム */
+@media (min-width: 48rem) {
+  .site--tsumugi .p-home-bizinfo { padding-block: var(--space-12); }
+  .site--tsumugi .p-home-bizinfo__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+  .site--tsumugi .p-home-bizinfo__card { padding: var(--space-6); }
+  .site--tsumugi .p-home-bizinfo__title { margin-bottom: var(--space-6); }
+}
+
+/* ----------------------------------------------------------------
+   SERVICE: Hero — 全幅背景画像 + テキストオーバーレイ
+---------------------------------------------------------------- */
+.site--tsumugi .p-service-hero {
+  background: url('../images/service-hero.jpg') center / cover no-repeat;
+  padding-top: calc(var(--header-height) + var(--space-6));
+  padding-bottom: var(--space-6);
+  padding-inline: var(--space-4);
+}
+
+.site--tsumugi .p-service-hero::before { display: none; }
+
+.site--tsumugi .p-service-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 14, 10, 0.6);
+  pointer-events: none;
+}
+
+.site--tsumugi .p-service-hero .c-page-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.site--tsumugi .p-service-hero-intro {
+  background-color: var(--color-bg-dark);
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+}
+
+.site--tsumugi .p-service-hero-intro__sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin: 0 0 var(--space-4);
+}
+
+.site--tsumugi .p-service-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.site--tsumugi .p-service-hero__tag {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-base);
+  border: 1px solid var(--color-border-light);
+  padding: 0.25rem 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  .site--tsumugi .p-service-hero {
+    padding-top: calc(var(--header-height) + var(--space-8));
+    padding-bottom: var(--space-8);
+  }
+  .site--tsumugi .p-service-hero-intro {
+    padding: var(--space-8) var(--space-8);
+  }
+}
+
+/* ----------------------------------------------------------------
+   SERVICE: Menu Item — 向いている方タグ（SP・PC 共通表示）
+---------------------------------------------------------------- */
+.site--tsumugi .c-menu-item__for {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-base);
+  margin-top: var(--space-4);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-border-light);
+  line-height: 1.8;
+}
+.site--tsumugi .c-menu-item__for::before {
+  content: "✓ ";
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+/* ----------------------------------------------------------------
+   CONTACT: Primary card（外部予約を最優先表示）
+---------------------------------------------------------------- */
+.site--tsumugi .c-contact-card--primary {
+  background-color: var(--color-bg-dark);
+  border-top: 2px solid var(--color-primary);
+}
+.site--tsumugi .c-contact-card--primary .c-contact-card__label {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wider);
+}
+.site--tsumugi .c-contact-card--primary .c-contact-card__title {
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+}
+.site--tsumugi .c-contact-card--primary .c-contact-card__text {
+  font-size: var(--font-size-sm);
+}
+.site--tsumugi .c-contact-card--primary .c-contact-card__btn {
+  font-size: var(--font-size-sm);
+  border-bottom-width: 1px;
+}
+
+/* ----------------------------------------------------------------
+   CONTACT: Hero — 全幅背景画像 + テキストオーバーレイ
+---------------------------------------------------------------- */
+.site--tsumugi .p-contact-hero {
+  background: url('../images/contact-hero.jpg') center / cover no-repeat;
+  padding-top: calc(var(--header-height) + var(--space-6));
+  padding-bottom: var(--space-6);
+  padding-inline: var(--space-4);
+}
+
+.site--tsumugi .p-contact-hero::before { display: none; }
+
+.site--tsumugi .p-contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 14, 10, 0.6);
+  pointer-events: none;
+}
+
+.site--tsumugi .p-contact-hero .c-page-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.site--tsumugi .p-contact-hero-intro {
+  background-color: var(--color-bg-dark);
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+}
+
+.site--tsumugi .p-contact-hero-intro__sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin: 0 auto;
+  max-width: 36rem;
+}
+
+@media (min-width: 48rem) {
+  .site--tsumugi .p-contact-hero {
+    padding-top: calc(var(--header-height) + var(--space-8));
+    padding-bottom: var(--space-8);
+  }
+  .site--tsumugi .p-contact-hero-intro {
+    padding: var(--space-8) var(--space-8);
+  }
+}
+
+/* ----------------------------------------------------------------
+   LOADER: 表示時間を延長
+   ・テキスト・ラインのアニメーションをゆっくりに
+   ・is-loaded 付与後も 1.2s 待ってから 1.5s かけてフェードアウト
+---------------------------------------------------------------- */
+.site--tsumugi .c-loader__text {
+  animation-duration: 2s;
+}
+.site--tsumugi .c-loader__line {
+  animation-duration: 2s;
+  animation-delay: 0.8s;
+}
+.site--tsumugi .c-loader.is-loaded {
+  transition-delay: 1.2s;
+  transition-duration: 1.5s;
+}
